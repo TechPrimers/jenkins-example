@@ -16,7 +16,7 @@ pipeline {
                             maven: 'maven_3_5_0') {
                             sh 'mvn install -Dmaven.test.failure.ignore=true'
                         }
-                junit 'surefire-reports/**/*.xml'
+                junit 'surefire-reports/*.xml'
             }
         }
         stage('Deploy') {
