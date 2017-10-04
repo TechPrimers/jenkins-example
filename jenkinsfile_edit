@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    stages {
+        stage ('BUILD') {
+            steps {                
+                    sh 'mvn clean install'                
+            }
+            steps {                
+                    //KEEP ARTIFACT                
+            }            
+        }
+        stage ('UNIT TEST') {
+
+            steps {                
+                    //TRIGGER UNIT TEST REPORT                
+            }
+        }
+        stage ('DEPLOY') {
+            steps {
+                  //WAS,JBOSS
+            }
+        }
+        stage ('ANALYSIS') {
+            steps {
+                    sh 'mvn sonar:sonar'
+            }
+        }
+    }
+}
