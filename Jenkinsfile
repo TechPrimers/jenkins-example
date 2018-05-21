@@ -18,6 +18,11 @@ pipeline {
                     bat 'mvn test'
                 }
             }
+            post{
+                failure{
+                    mail to: paul.mriganka@gmail.com, subject: 'The pipeline failed :('
+                }
+            }
         }
 
 
