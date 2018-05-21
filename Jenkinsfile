@@ -19,9 +19,9 @@ pipeline {
                 }
             }
             post{
-                failure{
-                    mail to: paul.mriganka@gmail.com, subject: 'The pipeline failed :('
-                }
+               failure {
+                           mail to: team@example.com, subject: 'The Pipeline failed'
+                       }
             }
         }
 
