@@ -21,7 +21,7 @@ pipeline {
             post{
                failure {
                           mail(from: "paul.mriganka@gmail.com",
-                                     to: paul.mriganka@gmail.com",
+                                     to: "paul.mriganka@gmail.com",
                                      subject: "That build failed.",
                                      body: "Nothing to see here")
                        }
