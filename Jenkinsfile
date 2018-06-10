@@ -11,7 +11,7 @@ pipeline {
             }
         }
 
-        stage ('Testing Stage') {
+    /*    stage ('Testing Stage') {
 
             steps {
                 withMaven(maven : 'maven_3_5_0') {
@@ -19,12 +19,12 @@ pipeline {
                 }
             }
         }
-
+*/
 
         stage ('Deployment Stage') {
             steps {
                 sh 'ls -lrt'
-                sh 'aws s3 ls'
+                sh '/usr/local/bin/aws s3 ls'
             }
         }
     }
