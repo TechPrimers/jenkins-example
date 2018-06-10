@@ -23,6 +23,12 @@ pipeline {
 
         stage ('Deployment Stage') {
             steps {
+
+            withCredentials([usernamePassword(credentialsId: 's3-bucket', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+              sh 'export AWS_ACCESS_KEY_ID=USERNAME'
+              sh 'export AWS_SECRET_ACCESS_KEY=$PASSWORD'
+              sh 'export AWS_DEFAULT_REGION=ap-south-1'
+            }
                 sh 'ls -lrt'
                 sh '/usr/local/bin/aws s3 ls'
             }
