@@ -35,42 +35,6 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.2.1</version>
-                <executions>
-                    <execution>
-                        <phase>integration-test</phase>
-                        <goals>
-                            <goal>java</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <executableDependency>
-                        <groupId>info.cukes</groupId>
-                        <artifactId>cucumber-core</artifactId>
-                    </executableDependency>
-                    <mainClass>cucumber.api.cli.Main</mainClass>
-                    <arguments>
-                        <argument>--plugin</argument>
-                        <argument>junit:target/cucumber-junit-report/allcukes.xml</argument>
-                        <argument>--plugin</argument>
-                        <argument>pretty</argument>
-                        <argument>--plugin</argument>
-                        <argument>html:target/cucumber-html-report</argument>
-                    </arguments>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>info.cukes</groupId>
-                        <artifactId>cucumber-core</artifactId>
-                        <version>1.2.5</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
         </plugins>
     </build>
 
