@@ -7,7 +7,8 @@
     <groupId>com.techprimers.testing</groupId>
     <artifactId>jenkins-example</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+<!-- test commit -->
+         
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
