@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+  logstash{
     stages {
         stage ('Compile Stage') {
 
@@ -29,4 +29,5 @@ pipeline {
             }
         }
     }
+  }
 }
