@@ -21,13 +21,9 @@ pipeline {
         }
 
         stage ('Deploy?') {
-
-steps {
-
-        steps {
-                        input('Do you want to deploy?')
-                    }
-
+            steps {
+                input('Do you want to deploy?')
+            }
         }
 
         stage ('Deployment Stage') {
