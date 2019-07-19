@@ -22,6 +22,7 @@ pipeline {
 
         stage ('Deploy?') {
 
+steps {
         try {
         input(
                 id: 'Proceed1', message: 'Proceed to Production deployment?', parameters: [
@@ -30,6 +31,7 @@ pipeline {
                 }
                 catch (Exception e) {
 
+                }
                 }
 
         }
