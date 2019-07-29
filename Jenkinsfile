@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent wind-node
 
     stages {
         stage ('Compile Stage') {
