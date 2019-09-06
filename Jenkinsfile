@@ -8,7 +8,7 @@ pipeline {
                 withMaven(maven : 'maven3.3.3') {
                     sh 'mvn clean compile'
                 }
-            }
+           }  
         }
 
         stage ('Testing Stage') {
