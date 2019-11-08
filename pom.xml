@@ -7,15 +7,12 @@
     <groupId>com.techprimers.testing</groupId>
     <artifactId>jenkins-example</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <junit.jupiter.version>5.0.0-M3</junit.jupiter.version>
         <junit.platform.version>1.0.0-M3</junit.platform.version>
     </properties>
-
     <build>
         <plugins>
             <plugin>
