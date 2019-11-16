@@ -4,7 +4,7 @@ pipeline {
         githubPush()
     }
     tools {
-        maven 'Maven_3.6.2' 
+        maven 'Maven' 
     }
 
     stages {
