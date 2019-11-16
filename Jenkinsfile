@@ -30,7 +30,7 @@ pipeline {
         stage ('Deployment Stage') {
             steps {
                 
-                    sh 'mvn deploy'
+                    sprintln('deploying')
                 
             }
         }
