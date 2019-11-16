@@ -30,7 +30,7 @@ pipeline {
         stage ('Deployment Stage') {
             steps {
                 
-                    sprintln('deploying')
+                    println('deploying')
                 
             }
         }
