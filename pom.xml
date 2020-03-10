@@ -15,6 +15,31 @@
         <junit.jupiter.version>5.0.0-M3</junit.jupiter.version>
         <junit.platform.version>1.0.0-M3</junit.platform.version>
     </properties>
+    <project
+          xmlns="http://maven.apache.org/POM/4.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+          <groupId>groupeId</groupId>
+          <artifactId>artifactId</artifactId>
+          <version>version</version>
+          <packaging>pom</packaging>
+          <name>${project.artifactId}-parent</name>
+          <description>description</description>
+          <build>
+              <plugins>
+                    <plugin>
+                        <groupId>org.sonarsource.scanner.maven</groupId>
+                        <artifactId>sonar-maven-plugin</artifactId>
+                        <version>3.3.0.603</version>
+                    </plugin>
+              </plugins>
+          </build>
+          <modules>
+              <module>module a</module>
+              <module>module b</module>
+              <module>module c</module>
+          </modules>
+    </project>
 
     <build>
         <plugins>
