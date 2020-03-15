@@ -2,29 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage ('Compile Stage') {
-
-            steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn clean compile'
-                }
-            }
+        stage ('SCM Checkout') {
+            git 'https://github.com/nalluriavinash5/jenkinsAssignment'
         }
 
-        stage ('Testing Stage') {
-
+        stage ('Complile - Package') {
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn test'
-                }
-            }
-        }
-
-
-        stage ('Deployment Stage') {
-            steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn deploy'
+                withMaven(maven : 'maven_3_6_3') {
+                    sh 'mvn package'
                 }
             }
         }
