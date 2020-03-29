@@ -22,20 +22,14 @@ pipeline {
 
         stage ('Deploy?') {
             steps {
-                input('Do you want to deploy?')
+                echo "deploy? stage completed successfully"
             }
         }
 
         stage ('Deployment Stage') {
             steps {
 
-		            withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'PCF_LOGIN',
-                            usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-
-                    sh '/usr/local/bin/cf login -a http://api.run.pivotal.io -u $USERNAME -p $PASSWORD'
-			        sh '/usr/local/bin/cf push'
-
-			
+		   echo "deployment stage completed successfully"
                 }
             }
         }
