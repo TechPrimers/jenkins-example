@@ -2,17 +2,26 @@ pipeline {
     agent any
 
     stages {
+        when {
+            branch 'master'
+        }       
         stage ('Compile Stage') {
-            when {
-                branch 'master'
-            }
-
             steps {
                 sh '''
                       echo "Hello master branch"
                    '''    
             }
         }
+        stage ('Testing Purpose') {
+            steps {
+                sh '''
+                      echo "Second stage execution"
+                   '''
+            }
+        }
+    }
+    
+    stages {
 
         stage ('Testing Stage') {
              when {
