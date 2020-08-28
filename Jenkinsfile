@@ -20,8 +20,6 @@ pipeline {
             }
         }
     }
-    
-    stages {
 
         stage ('Testing Stage') {
              when {
@@ -33,8 +31,6 @@ pipeline {
                       echo "Hello develop branch"
                    '''    
             }
-        }
-
 
         stage ('Deployment Stage') {
              when {
