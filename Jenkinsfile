@@ -20,13 +20,14 @@ pipeline {
             }
         }
 
-
-#        stage ('Deployment Stage') {
-#            steps {
-#                withMaven(maven : 'maven_3_6_3') {
-#                    sh 'mvn deploy'
-#                }
-#            }
-#       }
+/*
+        stage ('Deployment Stage') {
+            steps {
+                withMaven(maven : 'maven_3_6_3') {
+                    sh 'mvn deploy'
+                }
+            }
+       }
+*/       
     }
 }
