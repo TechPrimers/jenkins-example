@@ -1,5 +1,5 @@
 pipeline {
-	agent any
+	agent {  label 'wind-node' }
 	stages {
 		stage('---clean---'){
 			steps {
