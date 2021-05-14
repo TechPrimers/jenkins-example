@@ -2,8 +2,11 @@ pipeline {
 	agent {  label 'linux-node-ec2' }
 	stages {
 		stage('---clean---'){
+			tools {
+				maven 'Maven3.5.0'
+			}
 			steps {
-				tool name: 'Maven3.5.0', type: 'maven'
+				
 				sh "mvn clean"
 			}
 		}
