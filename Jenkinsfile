@@ -11,12 +11,18 @@ pipeline {
 			}
 		}
 		stage('---test---') {
+			tools {
+				maven 'Maven3.5.0'
+			}
 			steps {
 				
 				sh "mvn test"
 			}
 		}
 		stage('---package---'){
+			tools {
+				maven 'Maven3.5.0'
+			}
 			steps {
 				
 				sh "mvn package"
