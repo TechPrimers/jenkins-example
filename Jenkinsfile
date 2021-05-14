@@ -1,5 +1,5 @@
 pipeline {
-	agent {  label 'wind-node' }
+	agent {  label 'linux-node-ec2' }
 	stages {
 		stage('---clean---'){
 			steps {
