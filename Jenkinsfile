@@ -29,4 +29,9 @@ pipeline {
 			}
 		}
 	}
+	post {
+		always {
+			echo 'job was built successfully'
+		}
+	}
 }
