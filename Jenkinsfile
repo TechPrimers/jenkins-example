@@ -1,9 +1,9 @@
 pipeline {
-	agent {  label 'linux-node-ec2' }
+	agent {  label 'linux-node' }
 	stages {
 		stage('---clean---'){
 			tools {
-				maven 'Maven3.5.0'
+				maven 'maven3.5.4'
 			}
 			steps {
 				
@@ -12,7 +12,7 @@ pipeline {
 		}
 		stage('---test---') {
 			tools {
-				maven 'Maven3.5.0'
+				maven 'maven3.5.4'
 			}
 			steps {
 				
@@ -21,7 +21,7 @@ pipeline {
 		}
 		stage('---package---'){
 			tools {
-				maven 'Maven3.5.0'
+				maven 'maven3.5.4'
 			}
 			steps {
 				
