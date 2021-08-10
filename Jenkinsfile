@@ -30,8 +30,11 @@ pipeline {
 		}
 	}
 	post {
-		always {
+		success {
 			echo 'job was built successfully'
+		}
+		failure {
+			echo 'job was not build..it was failed'
 		}
 	}
 }
