@@ -21,9 +21,6 @@ pipeline {
                    '''
             }
         }
-    }
-    
-    stages {
 
         stage ('Testing Stage') {
              when {
