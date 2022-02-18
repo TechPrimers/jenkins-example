@@ -1,31 +1,49 @@
 pipeline {
     agent any
 
-    stages {
+    stages {      
         stage ('Compile Stage') {
-
+            when {
+                branch 'master'
+            } 
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn clean compile'
-                }
+                sh '''
+                      echo "Hello master branch"
+                      echo ${BRANCH_NAME}
+                      echo ${BUILD_ID}
+                   '''    
+            }
+        }
+        stage ('Testing Purpose') {
+            steps {
+                sh '''
+                      echo "Second stage execution"
+                   '''
             }
         }
 
         stage ('Testing Stage') {
+             when {
+                branch 'develop'
+            }
 
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn test'
-                }
+                sh '''
+                      echo "Hello develop branch"
+                   '''    
             }
         }
 
 
         stage ('Deployment Stage') {
+             when {
+                branch 'feature-1'
+            }
+
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn deploy'
-                }
+                sh '''
+                      echo "Hello feature-1 branch"
+                   '''    
             }
         }
     }
