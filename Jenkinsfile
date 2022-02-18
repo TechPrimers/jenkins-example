@@ -1,11 +1,11 @@
 pipeline {
     agent any
 
-    stages {
-        when {
-            branch 'master'
-        }       
+    stages {      
         stage ('Compile Stage') {
+            when {
+                branch 'master'
+            } 
             steps {
                 sh '''
                       echo "Hello master branch"
