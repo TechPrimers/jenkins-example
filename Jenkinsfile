@@ -10,7 +10,7 @@ pipeline {
                 sh '''
                       echo "Hello master branch"
                       echo ${BRANCH_NAME}
-                      echo env.BRANCH_NAME
+                      echo ${BUILD_ID}
                    '''    
             }
         }
