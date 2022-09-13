@@ -12,7 +12,7 @@ pipeline {
 		}
 		stage('---test---') {
 			tools {
-				maven 'maven3.8.3'
+				maven 'maven3.8.1'
 			}
 			steps {
 				
