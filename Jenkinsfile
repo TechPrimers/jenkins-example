@@ -20,6 +20,9 @@ pipeline {
 			}
 		}
 		stage('---package---'){
+			tools {
+				maven 'maven3.8.1'
+			}
 			
 			steps {
 				
