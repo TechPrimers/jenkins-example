@@ -1,32 +1,40 @@
 pipeline {
     agent any
-
     stages {
-        stage ('Compile Stage') {
-
+        stage('pre -build') {
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn clean compile'
-                }
+                bat 'echo Pre-build'
             }
         }
-
-        stage ('Testing Stage') {
-
+        stage('build') {
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn test'
-                }
+                bat 'echo Build in progress.'
             }
         }
-
-
-        stage ('Deployment Stage') {
+        stage('Unit tests') {
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn deploy'
-                }
+                bat 'echo Running unit tests'
             }
+        }
+        stage('deploy') {
+            steps {
+                bat 'echo Deploying build'
+            }
+        }
+        stage('Regression tests') {
+            steps {
+                bat 'echo Running E2E tests'
+            }
+        }
+        stage('Release to prod') {
+            steps {
+                bat 'echo Releasing to prod'
+            }
+        }
+    }
+ post {
+        always {
+            echo 'Cleanup after everything!'
         }
     }
 }
