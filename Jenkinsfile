@@ -6,7 +6,7 @@ pipeline {
 
             steps {
                 withMaven(maven : 'maven-siddu') {
-                    sh 'mvn clean compile'
+                    sh '/usr/share/maven mvn clean compile'
                 }
             }
         }
@@ -15,7 +15,7 @@ pipeline {
 
             steps {
                 withMaven(maven : 'maven-siddu') {
-                    sh 'mvn test'
+                    sh '/usr/share/maven mvn test'
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
         stage ('Deployment Stage') {
             steps {
                 withMaven(maven : 'maven-siddu') {
-                    sh 'mvn deploy'
+                    sh '/usr/share/maven mvn deploy'
                 }
             }
         }
