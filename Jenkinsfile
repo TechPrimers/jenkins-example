@@ -15,7 +15,7 @@ pipeline {
 				maven 'maven_3.8.4'
 			}
 			steps {
-				sh 'mevn --version'
+				sh 'mvn --version'
 				sh "mvn test"
 			}
 		}
