@@ -6,6 +6,7 @@ pipeline {
 				maven 'maven_3.8.6'
 			}
 			steps {
+				sh 'mvn --version'
 				sh "mvn clean"
 			}
 		}
@@ -14,6 +15,7 @@ pipeline {
 				maven 'maven_3.8.4'
 			}
 			steps {
+				sh 'mevn --version'
 				sh "mvn test"
 			}
 		}
@@ -23,7 +25,7 @@ pipeline {
 			}
 			
 			steps {
-				
+				sh 'mvn --version'
 				sh "mvn package"
 			}
 		}
