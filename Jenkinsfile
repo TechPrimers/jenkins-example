@@ -20,6 +20,9 @@ pipeline {
 			}
 		}
 		stage('---package---'){
+			tools {
+				maven 'maven_3.8.5'
+			}
 			
 			steps {
 				sh 'mvn --version'
