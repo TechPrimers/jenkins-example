@@ -2,3 +2,7 @@ aws
 devops
 git
 ansible
+terraform
+docker
+kubernetes
+jenkins
