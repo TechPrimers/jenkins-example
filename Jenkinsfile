@@ -3,29 +3,25 @@ pipeline {
 
     stages {
         stage ('Compile Stage') {
-
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn clean compile'
-                }
+                sh 'mvn clean compile'
             }
         }
 
         stage ('Testing Stage') {
-
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn test'
-                }
+                sh 'mvn test'
             }
         }
 
 
-        stage ('Deployment Stage') {
+        stage ('Package & Save Artifact') {
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn deploy'
-                }
+                // 1. 'package' builds the .jar file
+                sh 'mvn clean package'
+                
+                // 2. This tells Jenkins to save the .jar file so you can download it from the UI
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
         }
     }
