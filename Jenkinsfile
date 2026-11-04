@@ -1,32 +1,46 @@
 pipeline {
-    agent any
-
-    stages {
-        stage ('Compile Stage') {
-
-            steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn clean compile'
-                }
-            }
-        }
-
-        stage ('Testing Stage') {
-
-            steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn test'
-                }
-            }
-        }
-
-
-        stage ('Deployment Stage') {
-            steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn deploy'
-                }
-            }
-        }
-    }
+	agent {  
+		node {
+		label 'Linux-Node' 
+		}
+	}
+	
+	stages {
+		stage('---clean----'){
+			tools {
+				maven 'mvn_3.9.10'
+			}
+			steps {
+				sh 'mvn --version'
+				sh "mvn clean"
+			}
+		}
+		stage('---test---') {
+			tools {
+				maven 'mvn_3.10.0'
+			}
+			steps {
+				sh 'mvn --version'
+				sh "mvn test"
+			}
+		}
+		stage('---package---'){
+			tools {
+				maven 'mvn_3.10.0'
+			}
+			
+			steps {
+				sh 'mvn --version'
+				sh "mvn package"
+			}
+		}
+	}
+	post {
+		success {
+			echo 'job was built successfully'
+		}
+		failure {
+			echo 'job was not build..it was failed'
+		}
+	}
 }
