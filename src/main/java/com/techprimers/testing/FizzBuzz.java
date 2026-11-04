@@ -4,7 +4,7 @@ public class FizzBuzz {
 
     public String play(int number) {
 
-        if (number == 0) throw new IllegalArgumentException("code changes on github SCM repo");
+        if (number == 0) throw new IllegalArgumentException("new changes on source code");
         if (number % 3 == 0) return "Fizz";
         if (number % 5 == 0) return "Buzz";
 
